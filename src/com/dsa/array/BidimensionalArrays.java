@@ -3,22 +3,15 @@ package com.dsa.array;
 import java.util.Arrays;
 
 public class BidimensionalArrays {
-
-
-    // array elements
-
-    // print an Array
-
-
-    // dont do this it only prints "memory dir"
-    //instead do this
-
-    // to handle with elements use name[]
-
-    // for loop - same on while or do while
-
-    //foreach
-
-    //read on reverse always substract 1 to teh lengt
-
+    public static void main(String[] args) {
+        // it is basically a matrix
+        // kind an array of arrays
+        int[][] grid = new int[2][4];
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 4; j++) {
+                grid[i][j] = 0;
+            }
+        }
+        System.out.println(Arrays.deepToString(grid));
+    }
 }
