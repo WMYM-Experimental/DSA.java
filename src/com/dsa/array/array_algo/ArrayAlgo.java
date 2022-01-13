@@ -14,7 +14,7 @@ public class ArrayAlgo {
         //Given an unsorted integer array, return true if there is a pair with the given sum as result.
         for (int i = 0; i <= arr.length; i++) {
             int diff = value - i;
-            for (int j = i + 1; j <= arr.length; j++) {
+            for (int j = i + 1; j < arr.length; j++) {
                 if (arr[j] == diff) {
                     return true;
                 }
