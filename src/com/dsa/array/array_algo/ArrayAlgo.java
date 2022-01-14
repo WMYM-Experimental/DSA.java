@@ -6,7 +6,7 @@ import java.util.Arrays;
 public class ArrayAlgo {
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 4, 0};
-        int[] result = sumOfTwoReturned(arr, 100);
+        int[] result = sumOfTwoReturned(arr, 4);
         System.out.println(Arrays.toString(result));
     }
 
@@ -29,13 +29,11 @@ public class ArrayAlgo {
         for (int i = 0; i <= arr.length; i++) {
             for (int j = i+1; j < arr.length; j++) {
                 if (arr[i] + arr[j] == value) {
-                    pair[0] = arr[i];
-                    pair[1] = arr[j];
-                    return pair;
+                    pair = new int[]{arr[i], arr[j]};
+                    System.out.println("Pair found: " + Arrays.toString(pair));
                 }
             }
         }
-        System.out.println("Pair not found");
         return pair;
     }
 }
