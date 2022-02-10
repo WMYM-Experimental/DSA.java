@@ -5,8 +5,8 @@ import java.util.Arrays;
 
 public class ArrayAlgo {
     public static void main(String[] args) {
-        int[] arr = {1, 2, 3, 4, 0};
-        int[] result = sumOfTwoReturned(arr, 4);
+        int[] arr = {1, 2, 3, 4,12,12,3,4,5,1,3,4,5,3113,1,1};
+        int[] result = sumOfTwoReturned(arr, 13);
         System.out.println(Arrays.toString(result));
     }
 
