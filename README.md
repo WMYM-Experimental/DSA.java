@@ -10,9 +10,15 @@ Are the programmetic way of storing data **in  memory space** so that data can b
 - **Correctness**: Data Structure implementation should implement its interface correctly. (In Java)
 
 ## Important Data Structures
-- Array / Multidimentional Array
-- Stack
-- Queue
-- List
-- Linked list
-- Hash Table
+
+- **Singly Linked list**
+- Double Linked List
+- Circular Linked List
+- **Array**
+- Stacks
+- Queues
+- **Binary Trees**
+- **Binary Heaps**
+- **Graphs**
+- **Matrix**
+- Tries
