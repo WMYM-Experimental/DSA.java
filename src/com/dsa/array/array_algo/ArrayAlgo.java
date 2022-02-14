@@ -2,12 +2,15 @@ package com.dsa.array.array_algo;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.HashMap;
 
 public class ArrayAlgo {
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 4,12,12,3,4,5,1,3,4,5,3113,1,1};
         int[] result = sumOfTwoReturned(arr, 13);
         System.out.println(Arrays.toString(result));
+        System.out.println(fibo(10));
+        System.out.println(fiboDP(20));
     }
 
     public static boolean sumOfTwo(int[] arr, int value) {
@@ -35,5 +38,25 @@ public class ArrayAlgo {
             }
         }
         return pair;
+    }
+
+    public static int fibo(int num){
+        if (num == 0){
+            return  0;
+        }else if(num == 1){
+            return 1;
+        }else{
+            return fibo(num - 1) + fibo(num - 2);
+        }
+    }
+
+    public static int fiboDP(int num){
+        HashMap<Integer, Integer> memory = new HashMap<Integer, Integer>();
+        memory.put(0, 0);
+        memory.put(1, 1);
+        for(int i = 2; i <= num; i++) {
+            memory.put(i, memory.get(i - 1) + memory.get(i - 2));
+        }
+        return memory.get(num);
     }
 }
