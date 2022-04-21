@@ -26,7 +26,7 @@ public class Stack_SLL {
     }
 
     public boolean empty(){
-        return false;
+        return this.stk.isEmpty();
     }
 
     public int search(int data){

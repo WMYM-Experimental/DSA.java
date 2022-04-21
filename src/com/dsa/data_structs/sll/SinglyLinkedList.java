@@ -175,6 +175,13 @@ public class SinglyLinkedList {
         return node;
     }
 
+    public boolean isEmpty(){
+        if (this.size() < 0){
+            return true;
+        }
+        return false;
+    }
+
     @Override
     public String toString() {
         StringBuilder result = new StringBuilder("[ ");
