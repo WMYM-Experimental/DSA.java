@@ -9,4 +9,19 @@ public class SLL_Node {
         this.data = data;
         this.next = null;
     }
+
+    @Override
+    public String toString() {
+        if (this.next == null){
+            return "( " +
+                    "Data: " + data +
+                    ", Next: " + " null " +
+                    " )";
+        }
+
+        return "( " +
+                "Data: " + data +
+                ", Next: " + next.data +
+                " )";
+    }
 }

@@ -1,4 +1,4 @@
-package com.dsa.w_jutil.array;
+package com.dsa.algo.array;
 
 import java.util.Arrays;
 

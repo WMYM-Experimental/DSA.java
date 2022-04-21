@@ -1,63 +1,70 @@
 package com.dsa.data_structs.sll;
 
-import java.util.Collection;
-
 public class SinglyLinkedList {
     // atributes
-    SLL_Node head = null;
+    SLL_Node head; // null
 
     // constructor
     public SinglyLinkedList(int data){
         this.head = new SLL_Node(data);
     }
 
-    // gets and sets
-    public SLL_Node getHead() {
-        return this.head;
-    }
-
-    public void setHead(SLL_Node head) {
-        this.head = head;
-    }
-
     // methods
-    public void add(int data){
-        // append => this adds an element at the end of the sll
-        SLL_Node newNode = new SLL_Node(data);
+    public void add(int index, int data){
+        if(index > this.size() || index < 0){
+            System.out.println("SinglyLinked IndexOutOfBoundsException");
+            System.exit(-1);
+            return;
+        }
 
+        if(index == 0){
+            this.addFirst(data);
+            return;
+        }else if(index == this.size() - 1){
+            this.addEnd(data);
+            return;
+        }
+
+        SLL_Node newNode = new SLL_Node(data);
+        SLL_Node aux = this.head;
+
+        for (int i = 0; i < index - 1; i++) {
+            aux = aux.next;
+        }
+
+        newNode.next = aux.next;
+        aux.next = newNode;
+    }
+
+    public void addFirst(int data){
+        SLL_Node newNode = new SLL_Node(data);
         if(this.head == null){
             this.head = newNode;
             return;
         }
 
-        SLL_Node aux = this.head;
+        newNode.next = this.head;
+        this.head = newNode;
+    }
 
+    public void addEnd(int data){
+        SLL_Node aux = this.head;
+        SLL_Node newNode = new SLL_Node(data);
         while(aux.next != null){
             aux = aux.next;
         }
         aux.next = newNode;
     }
 
-    public void add(int nth, int data){
-        return;
-    }
-
-    public void addFirst(int data){
-        return;
-    }
-
-    public void addEnd(int data){
-        return;
-    }
-
     public void clear() {
         this.head = null;
-        return;
     }
 
+    /*
     public void addALL(Collection<Integer> collection){
         return;
     }
+    */
 
     public boolean contains(int data){
         SLL_Node aux = this.head;
@@ -70,19 +77,19 @@ public class SinglyLinkedList {
         return false;
     }
 
-    public int getFirst(){
-        return this.head.data;
-    }
-
-    public int getLast(){
+    public int indexOf(int data){
+        // return the index of the first occurrence of the specified element
+        // or -1 if the list does not contain any element.
         SLL_Node aux = this.head;
-        while(aux.next != null){
+        int index = 0;
+
+        while(aux != null){
+            if(aux.data == data){
+                return index;
+            }
+            index++;
             aux = aux.next;
         }
-        return aux.data;
-    }
-
-    public int indexOf(){
         return -1;
     }
 
@@ -107,41 +114,67 @@ public class SinglyLinkedList {
 
     public int pollLast(){
         SLL_Node aux = this.head;
-        while(aux.next != null){
+        while(aux.next.next != null){
             aux = aux.next;
         }
         int temp = aux.data;
-        aux = null;
+        aux.next = null;
         return temp;
     }
 
-    public void remove(int nth){
+    public void remove(int index){
+        if(index > this.size() || index < 0){
+            System.out.println("SinglyLinked IndexOutOfBoundsException");
+            System.exit(-1);
+            return;
+        }
+
+        if(index == 0){
+            this.poll();
+            return;
+        }else if(index == this.size() - 1){
+            this.pollLast();
+            return;
+        }
+
+        SLL_Node aux = this.head;
+
+        for (int i = 0; i < index - 1; i++) {
+            aux = aux.next;
+        }
+        SLL_Node temp = aux.next;
+        aux.next = temp.next;
         return;
-    }
-
-    public void remove(){
-        // this removes the first element of the list
-        this.poll();
-    }
-
-    public int removeFirst(){
-        // this removes the first element of the list
-        return this.poll();
-    }
-
-    public int removeLast(){
-        // this removes the last element of the list
-        return this.pollLast();
     }
 
     public int size(){
         // returns the lenght of the list
         SLL_Node aux = this.head;
         int l = 0;
-        while(aux.next != null){
+        while(aux != null){
             l++;
             aux = aux.next;
         }
         return l;
+    }
+
+    public void reverseIterative(){
+        return;
+    }
+
+    public void reverseRecursive(){
+        return;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder result = new StringBuilder("[ ");
+        SLL_Node aux = this.head;
+        while( aux.next != null){
+            result.append(aux.data).append(", ");
+            aux = aux.next;
+        }
+        result.append(aux.data).append(" ]");
+        return result.toString();
     }
 }

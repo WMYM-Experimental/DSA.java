@@ -1,4 +1,4 @@
-package com.dsa.w_jutil.array.array_algo;
+package com.dsa.algo.array.array_algo;
 
 import java.util.Arrays;
 import java.util.HashMap;
