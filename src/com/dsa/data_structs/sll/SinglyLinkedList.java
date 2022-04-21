@@ -2,7 +2,7 @@ package com.dsa.data_structs.sll;
 
 public class SinglyLinkedList {
     // atributes
-    SLL_Node head; // null
+    public SLL_Node head; // null
 
     // constructor
     public SinglyLinkedList(int data){
@@ -144,7 +144,6 @@ public class SinglyLinkedList {
         }
         SLL_Node temp = aux.next;
         aux.next = temp.next;
-        return;
     }
 
     public int size(){
@@ -159,11 +158,21 @@ public class SinglyLinkedList {
     }
 
     public void reverseIterative(){
-        return;
+        SLL_Node current = this.head;
+        SLL_Node prev = null;
+        SLL_Node next = null;
+        while (current != null){
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+        this.head = prev; // prev is kind of a current
     }
 
-    public void reverseRecursive(){
-        return;
+    public SLL_Node reverseRecursive(SLL_Node node){
+        // TODO: Do a method that reverse a linkes list recursively
+        return node;
     }
 
     @Override

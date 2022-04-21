@@ -1,22 +1,21 @@
 package com.dsa;
 
 import com.dsa.data_structs.sll.SinglyLinkedList;
+import com.dsa.data_structs.stack_sll.Stack_SLL;
 
 public class Main {
     public static void main(String[] args) {
-        SinglyLinkedList sll = new SinglyLinkedList(100);
+        Stack_SLL stk = new Stack_SLL(1000);
         for (int i = 0; i < 10; i++) {
-            sll.addEnd(i);
+            stk.push(i);
+            System.out.println(stk.peek());
+            System.out.println(stk.toString());
         }
-        sll.pollLast();
-        System.out.println(sll.toString());
-        System.out.println(sll.peekLast() + " " + sll.peek());
-        System.out.println(sll.size());
-        System.out.println(sll.indexOf(8));
-        sll.addFirst(900);
-        sll.add(3, 245);
-        sll.add(4, 245);
-        sll.remove(3);
-        System.out.println(sll.toString());
+
+        for (int i = 0; i < 10; i++) {
+            stk.pop();
+            System.out.println(stk.peek());
+            System.out.println(stk.toString());
+        }
     }
 }
