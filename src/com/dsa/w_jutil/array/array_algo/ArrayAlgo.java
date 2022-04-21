@@ -1,6 +1,5 @@
-package com.dsa.array.array_algo;
+package com.dsa.w_jutil.array.array_algo;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.HashMap;
 
