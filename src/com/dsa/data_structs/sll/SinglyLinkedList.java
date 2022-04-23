@@ -68,7 +68,7 @@ public class SinglyLinkedList {
 
     public boolean contains(int data){
         SLL_Node aux = this.head;
-        while(aux.next != null){
+        while(aux != null){
             if(aux.data == data){
                 return true;
             }
@@ -122,19 +122,17 @@ public class SinglyLinkedList {
         return temp;
     }
 
-    public void remove(int index){
+    public int remove(int index){
         if(index > this.size() || index < 0){
             System.out.println("SinglyLinked IndexOutOfBoundsException");
             System.exit(-1);
-            return;
+            return -1;
         }
 
         if(index == 0){
-            this.poll();
-            return;
+            return this.poll();
         }else if(index == this.size() - 1){
-            this.pollLast();
-            return;
+            return this.pollLast();
         }
 
         SLL_Node aux = this.head;
@@ -144,6 +142,7 @@ public class SinglyLinkedList {
         }
         SLL_Node temp = aux.next;
         aux.next = temp.next;
+        return temp.data;
     }
 
     public int size(){
@@ -160,7 +159,7 @@ public class SinglyLinkedList {
     public void reverseIterative(){
         SLL_Node current = this.head;
         SLL_Node prev = null;
-        SLL_Node next = null;
+        SLL_Node next;
         while (current != null){
             next = current.next;
             current.next = prev;
@@ -176,10 +175,7 @@ public class SinglyLinkedList {
     }
 
     public boolean isEmpty(){
-        if (this.size() < 0){
-            return true;
-        }
-        return false;
+        return this.size() <= 0 || this.head == null;
     }
 
     @Override

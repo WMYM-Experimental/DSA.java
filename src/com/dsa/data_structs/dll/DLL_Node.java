@@ -14,20 +14,25 @@ public class DLL_Node {
     @Override
     public String toString() {
 
-        String nodeCasePrev = this.prev.data + "";
-        String nodeCaseNext = this.next.data + "";
+        if (this.prev == null){
+            return "( " +
+                    "Prev:" + " null " +
+                    ", Data:" + data +
+                    ", Next:" + this.next.data +
+                    " )";
+        }
 
         if (this.next == null){
-            nodeCaseNext = " null ";
-        }
-
-        if (this.prev == null){
-            nodeCasePrev = " null ";
+            return "( " +
+                    "Prev:" + this.prev.data +
+                    ", Data:" + data +
+                    ", Next:" + " null " +
+                    " )";
         }
         return "( " +
-                "Prev: " + nodeCasePrev +
+                "Prev:" + this.prev.data +
                 ", Data:" + data +
-                ", Next:" + nodeCaseNext +
+                ", Next:" + this.next.data +
                 " )";
     }
 }
