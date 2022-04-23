@@ -1,7 +1,6 @@
 package com.dsa;
 
 import com.dsa.data_structs.queue_sll.Queue_SLL;
-import com.dsa.data_structs.sll.SinglyLinkedList;
 import com.dsa.data_structs.stack_sll.Stack_SLL;
 
 public class Main {
