@@ -17,13 +17,10 @@ Are the programmetic way of storing data **in  memory space** so that data can b
 ## Important Data Structures:
 
 - **Singly Linked List**
-- Double Linked List
-- Circular Linked List
+- **Double Linked List**
 - **Array**
-- Stacks
-- Queues
+- **Stacks**
+- **Queues**
 - **Binary Trees**
-- **Binary Heaps**
 - **Graphs**
 - **Matrix**
-- Tries

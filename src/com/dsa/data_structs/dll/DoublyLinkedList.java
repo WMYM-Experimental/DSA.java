@@ -1,12 +1,10 @@
 package com.dsa.data_structs.dll;
 
-import com.dsa.data_structs.sll.SLL_Node;
-
 public class DoublyLinkedList {
     public DLL_Node head;
 
-    public DoublyLinkedList(int data){
-        this.head = new DLL_Node(data);
+    public DoublyLinkedList(int initialHead){
+        this.head = new DLL_Node(initialHead);
     }
 
     public void add(int index, int data){
@@ -179,6 +177,18 @@ public class DoublyLinkedList {
 
     @Override
     public String toString() {
+        StringBuilder result = new StringBuilder("[ ");
+        DLL_Node aux = this.head;
+
+        while( aux.next != null){
+            result.append(aux.data).append(", ");
+            aux = aux.next;
+        }
+        result.append(aux.data).append(" ]");
+        return result.toString();
+    }
+
+    public String toNodesString() {
         StringBuilder result = new StringBuilder("[ ");
         DLL_Node aux = this.head;
 

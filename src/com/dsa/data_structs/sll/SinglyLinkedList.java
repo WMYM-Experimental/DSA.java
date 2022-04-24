@@ -5,8 +5,8 @@ public class SinglyLinkedList {
     public SLL_Node head; // null
 
     // constructor
-    public SinglyLinkedList(int data){
-        this.head = new SLL_Node(data);
+    public SinglyLinkedList(int initialHead){
+        this.head = new SLL_Node(initialHead);
     }
 
     // methods
@@ -187,6 +187,17 @@ public class SinglyLinkedList {
             aux = aux.next;
         }
         result.append(aux.data).append(" ]");
+        return result.toString();
+    }
+
+    public String toNodesString() {
+        StringBuilder result = new StringBuilder("[ ");
+        SLL_Node aux = this.head;
+        while( aux.next != null){
+            result.append(aux.toString()).append(", ");
+            aux = aux.next;
+        }
+        result.append(aux.toString()).append(" ]");
         return result.toString();
     }
 }
