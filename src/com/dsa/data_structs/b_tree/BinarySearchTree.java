@@ -11,32 +11,30 @@ public class BinarySearchTree {
         this.root = null;
     }
 
-    public BST_Node insert(BST_Node rootNode, int data){
-        if (rootNode == null) {
-            rootNode = new BST_Node(data);
+    public BST_Node insert(BST_Node current, int value){
+        if (current == null) {
+            return new BST_Node(value);
         }
-        else if (data <= rootNode.data) {
-            rootNode.left = insert(rootNode.left, data);
+
+        if (value < current.data) {
+            current.left = insert(current.left, value);
+        } else if (value > current.data) {
+            current.right = insert(current.right, value);
+        } else {
+            return current;
         }
-        else {
-            rootNode.right = insert(rootNode.right, data);
-        }
-        return rootNode;
+        return current;
     }
 
-    public boolean contains(BST_Node rootNode, int data){
-        if (rootNode == null) {
+    public boolean contains(BST_Node node, int value){
+        if (node == null) {
             return false;
         }
-        else if (rootNode.data == data) {
+        if (value == node.data) {
             return true;
         }
-        else if(data < rootNode.data) {
-            contains(rootNode.left, data);
-        }
-        else {
-            contains(rootNode.right, data);
-        }
-        return false;
+        return value < node.data
+                ? contains(node.left, value)
+                : contains(node.right, value);
     }
 }
