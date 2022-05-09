@@ -16,4 +16,17 @@ public class BST_Node {
         this.right =  null;
         this.left = null;
     }
+
+    public boolean isLeaf(){
+        return this.right == null && this.left == null;
+    }
+
+    @Override
+    public String toString() {
+        return "(" +
+                "Left: " + this.left +
+                ", Data: " + this.data +
+                ", Right: " + this.right +
+                ")";
+    }
 }
