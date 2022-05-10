@@ -4,5 +4,49 @@ public class CircularLinkedList {
     public CllNode head;
     public CllNode tail;
 
+    public CircularLinkedList(){
+        this.head = null;
+        this.tail = null;
+    }
 
+    public CircularLinkedList(int data){
+        this.head = new CllNode(data);
+        this.head.next = this.head;
+        this.tail = this.head.next;
+    }
+
+    public void addEnd(int data){
+        CllNode aux = new CllNode(data);
+        if(this.head == null){
+            this.head = aux;
+            this.head.next = this.head;
+            this.tail = this.head.next;
+        }
+
+        aux.next = this.head;
+        this.tail.next = aux;
+        this.tail = aux;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder result = new StringBuilder("[ ");
+        CllNode aux = this.head;
+
+        if(this.head == null){
+            return "[]";
+        }
+
+        do {
+            if(aux.next == this.head) {
+                result.append(aux.data);
+            }else {
+                result.append(aux.data).append(", ");
+            }
+            aux = aux.next;
+        }while (aux != this.head);
+
+        result.append(" ]");
+        return result.toString();
+    }
 }
