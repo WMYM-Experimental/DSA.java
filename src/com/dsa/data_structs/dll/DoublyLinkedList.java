@@ -1,15 +1,15 @@
 package com.dsa.data_structs.dll;
 
 public class DoublyLinkedList {
-    public DLL_Node head;
+    public DllNode head;
 
     public DoublyLinkedList(int initialHead){
-        this.head = new DLL_Node(initialHead);
+        this.head = new DllNode(initialHead);
     }
 
     public void add(int index, int data){
-        DLL_Node newNode = new DLL_Node(data);
-        DLL_Node aux = this.head;
+        DllNode newNode = new DllNode(data);
+        DllNode aux = this.head;
 
         if(this.head == null){
             this.head = newNode;
@@ -40,15 +40,15 @@ public class DoublyLinkedList {
     }
 
     public void addFirst(int data){
-        DLL_Node newNode = new DLL_Node(data);
+        DllNode newNode = new DllNode(data);
         newNode.next = this.head;
         this.head.prev = newNode;
         this.head = newNode;
     }
 
     public void addEnd(int data){
-        DLL_Node aux = this.head;
-        DLL_Node newNode = new DLL_Node(data);
+        DllNode aux = this.head;
+        DllNode newNode = new DllNode(data);
         while(aux.next != null){
             aux = aux.next;
         }
@@ -61,7 +61,7 @@ public class DoublyLinkedList {
     }
 
     public boolean contains(int data){
-        DLL_Node aux = this.head;
+        DllNode aux = this.head;
         while(aux != null){
             if(aux.data == data){
                 return true;
@@ -72,7 +72,7 @@ public class DoublyLinkedList {
     }
 
     public int indexOf(int data){
-        DLL_Node aux = this.head;
+        DllNode aux = this.head;
         int index = 0;
 
         while(aux != null){
@@ -90,7 +90,7 @@ public class DoublyLinkedList {
     }
 
     public int peekLast(){
-        DLL_Node aux = this.head;
+        DllNode aux = this.head;
         while(aux.next != null){
             aux = aux.next;
         }
@@ -105,7 +105,7 @@ public class DoublyLinkedList {
     }
 
     public int pollLast(){
-        DLL_Node aux = this.head;
+        DllNode aux = this.head;
         int temp;
         while(aux.next.next != null){
             aux = aux.next;
@@ -116,7 +116,7 @@ public class DoublyLinkedList {
     }
 
     public int remove(int index){
-        DLL_Node aux = this.head;
+        DllNode aux = this.head;
 
         if (index > this.size() || index < 0 || this.head == null){
             System.out.println("DoublyLinkedList IndexOutOfBoundsException");
@@ -134,7 +134,7 @@ public class DoublyLinkedList {
             aux = aux.next;
         }
 
-        DLL_Node temp = aux.next;
+        DllNode temp = aux.next;
         temp.next.prev = aux;
         aux.next = temp.next;
 
@@ -142,7 +142,7 @@ public class DoublyLinkedList {
     }
 
     public int size(){
-        DLL_Node aux = this.head;
+        DllNode aux = this.head;
         int len = 0;
         while(aux != null){
             len++;
@@ -153,9 +153,9 @@ public class DoublyLinkedList {
 
     public void reverseIterative(){
         // TODO: improve this algo
-        DLL_Node current = this.head;
-        DLL_Node next;
-        DLL_Node prev = null;
+        DllNode current = this.head;
+        DllNode next;
+        DllNode prev = null;
         while (current != null){
             next = current.next;
             current.next = prev;
@@ -166,7 +166,7 @@ public class DoublyLinkedList {
         this.head = prev;
     }
 
-    public DLL_Node reverseRecursive(DLL_Node node){
+    public DllNode reverseRecursive(DllNode node){
         // TODO: reverseRecursively a dll
         return this.head;
     }
@@ -178,7 +178,7 @@ public class DoublyLinkedList {
     @Override
     public String toString() {
         StringBuilder result = new StringBuilder("[ ");
-        DLL_Node aux = this.head;
+        DllNode aux = this.head;
 
         while( aux.next != null){
             result.append(aux.data).append(", ");
@@ -190,7 +190,7 @@ public class DoublyLinkedList {
 
     public String toNodesString() {
         StringBuilder result = new StringBuilder("[ ");
-        DLL_Node aux = this.head;
+        DllNode aux = this.head;
 
         while( aux.next != null){
             result.append(aux.toString()).append(", ");

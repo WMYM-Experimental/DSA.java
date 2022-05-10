@@ -2,10 +2,10 @@ package com.dsa.data_structs.stack_sll;
 
 import com.dsa.data_structs.sll.SinglyLinkedList;
 
-public class Stack_SLL {
+public class StackSll {
     private SinglyLinkedList stk;
 
-    public Stack_SLL(int data){
+    public StackSll(int data){
         this.stk = new SinglyLinkedList(data);
     }
 

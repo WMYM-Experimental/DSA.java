@@ -1,11 +1,11 @@
 package com.dsa.data_structs.sll;
 
-public class SLL_Node {
+public class SllNode {
 
     public int data;
-    public SLL_Node next = null;
+    public SllNode next;
 
-    public SLL_Node(int data){
+    public SllNode(int data){
         this.data = data;
         this.next = null;
     }

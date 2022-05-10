@@ -2,10 +2,10 @@ package com.dsa.data_structs.queue_sll;
 
 import com.dsa.data_structs.sll.SinglyLinkedList;
 
-public class Queue_SLL {
+public class QueueSll {
     private SinglyLinkedList queue;
 
-    public Queue_SLL(int data){
+    public QueueSll(int data){
         this.queue = new SinglyLinkedList(data);
     }
 

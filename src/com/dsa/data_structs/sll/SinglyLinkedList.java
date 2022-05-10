@@ -2,11 +2,11 @@ package com.dsa.data_structs.sll;
 
 public class SinglyLinkedList {
     // atributes
-    public SLL_Node head; // null
+    public SllNode head; // null
 
     // constructor
     public SinglyLinkedList(int initialHead){
-        this.head = new SLL_Node(initialHead);
+        this.head = new SllNode(initialHead);
     }
 
     // methods
@@ -25,8 +25,8 @@ public class SinglyLinkedList {
             return;
         }
 
-        SLL_Node newNode = new SLL_Node(data);
-        SLL_Node aux = this.head;
+        SllNode newNode = new SllNode(data);
+        SllNode aux = this.head;
 
         for (int i = 0; i < index - 1; i++) {
             aux = aux.next;
@@ -37,7 +37,7 @@ public class SinglyLinkedList {
     }
 
     public void addFirst(int data){
-        SLL_Node newNode = new SLL_Node(data);
+        SllNode newNode = new SllNode(data);
         if(this.head == null){
             this.head = newNode;
             return;
@@ -48,8 +48,8 @@ public class SinglyLinkedList {
     }
 
     public void addEnd(int data){
-        SLL_Node aux = this.head;
-        SLL_Node newNode = new SLL_Node(data);
+        SllNode aux = this.head;
+        SllNode newNode = new SllNode(data);
         while(aux.next != null){
             aux = aux.next;
         }
@@ -67,7 +67,7 @@ public class SinglyLinkedList {
     */
 
     public boolean contains(int data){
-        SLL_Node aux = this.head;
+        SllNode aux = this.head;
         while(aux != null){
             if(aux.data == data){
                 return true;
@@ -80,7 +80,7 @@ public class SinglyLinkedList {
     public int indexOf(int data){
         // return the index of the first occurrence of the specified element
         // or -1 if the list does not contain any element.
-        SLL_Node aux = this.head;
+        SllNode aux = this.head;
         int index = 0;
 
         while(aux != null){
@@ -98,7 +98,7 @@ public class SinglyLinkedList {
     }
 
     public int peekLast(){
-        SLL_Node aux = this.head;
+        SllNode aux = this.head;
         while(aux.next != null){
             aux = aux.next;
         }
@@ -107,13 +107,13 @@ public class SinglyLinkedList {
 
     public int poll(){
         int temp = this.head.data;
-        SLL_Node aux = this.head;
+        SllNode aux = this.head;
         this.head = aux.next;
         return temp;
     }
 
     public int pollLast(){
-        SLL_Node aux = this.head;
+        SllNode aux = this.head;
         while(aux.next.next != null){
             aux = aux.next;
         }
@@ -135,19 +135,19 @@ public class SinglyLinkedList {
             return this.pollLast();
         }
 
-        SLL_Node aux = this.head;
+        SllNode aux = this.head;
 
         for (int i = 0; i < index - 1; i++) {
             aux = aux.next;
         }
-        SLL_Node temp = aux.next;
+        SllNode temp = aux.next;
         aux.next = temp.next;
         return temp.data;
     }
 
     public int size(){
         // returns the lenght of the list
-        SLL_Node aux = this.head;
+        SllNode aux = this.head;
         int l = 0;
         while(aux != null){
             l++;
@@ -157,9 +157,9 @@ public class SinglyLinkedList {
     }
 
     public void reverseIterative(){
-        SLL_Node current = this.head;
-        SLL_Node prev = null;
-        SLL_Node next;
+        SllNode current = this.head;
+        SllNode prev = null;
+        SllNode next;
         while (current != null){
             next = current.next;
             current.next = prev;
@@ -169,7 +169,7 @@ public class SinglyLinkedList {
         this.head = prev; // prev is kind of a current
     }
 
-    public SLL_Node reverseRecursive(SLL_Node node){
+    public SllNode reverseRecursive(SllNode node){
         // TODO: Do a method that reverse a linkes list recursively
         return node;
     }
@@ -181,7 +181,7 @@ public class SinglyLinkedList {
     @Override
     public String toString() {
         StringBuilder result = new StringBuilder("[ ");
-        SLL_Node aux = this.head;
+        SllNode aux = this.head;
         while( aux.next != null){
             result.append(aux.data).append(", ");
             aux = aux.next;
@@ -192,7 +192,7 @@ public class SinglyLinkedList {
 
     public String toNodesString() {
         StringBuilder result = new StringBuilder("[ ");
-        SLL_Node aux = this.head;
+        SllNode aux = this.head;
         while( aux.next != null){
             result.append(aux.toString()).append(", ");
             aux = aux.next;

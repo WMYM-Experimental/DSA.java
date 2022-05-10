@@ -1,11 +1,11 @@
 package com.dsa.data_structs.dll;
 
-public class DLL_Node {
+public class DllNode {
     public int data;
-    public DLL_Node prev;
-    public DLL_Node next;
+    public DllNode prev;
+    public DllNode next;
 
-    public DLL_Node(int data){
+    public DllNode(int data){
         this.data = data;
         this.next = null;
         this.prev = null;
