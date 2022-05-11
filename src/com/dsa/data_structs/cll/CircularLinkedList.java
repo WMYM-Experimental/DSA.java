@@ -2,43 +2,78 @@ package com.dsa.data_structs.cll;
 
 public class CircularLinkedList {
     public CllNode head;
-    public CllNode tail;
 
     public CircularLinkedList(){
         this.head = null;
-        this.tail = null;
     }
 
     public CircularLinkedList(int data){
         this.head = new CllNode(data);
         this.head.next = this.head;
-        this.tail = this.head.next;
     }
 
     public void addEnd(int data){
-        CllNode aux = new CllNode(data);
+        CllNode newNode = new CllNode(data);
+        CllNode aux = this.head;
+
         if(this.head == null){
-            this.head = aux;
+            this.head = newNode;
             this.head.next = this.head;
-            this.tail = this.head.next;
+            return;
         }
 
-        aux.next = this.head;
-        this.tail.next = aux;
-        this.tail = aux;
+        do {
+            aux = aux.next;
+        }while(aux.next != this.head);
+
+        newNode.next = aux.next;
+        aux.next = newNode;
     }
 
-    public boolean remove(int data){
+    public void addAt(int nth, int data){
         CllNode aux = this.head;
+        CllNode newNode = new CllNode(data);
+
+        if((nth > this.size() - 1) || (nth < 0)){
+            System.out.println("List IndexOutOfBoundsException");
+            System.exit(-1);
+        }
+
+        if(nth == 0){
+            CllNode temp = this.head;
+            do {
+                temp = temp.next;
+            }while(temp.next != this.head);
+
+            temp.next = newNode;
+            newNode.next = this.head;
+            this.head = newNode;
+            return;
+        }
+
+        for (int i = 0; i < nth - 1 ; i++) {
+            aux = aux.next;
+        }
+
+        newNode.next = aux.next.next;
+        aux.next = newNode;
+    }
+
+    public boolean removeData(int data){
+        CllNode aux = this.head;
+
         if(this.head == null){
             return false;
         }
 
         // this is case when the data we want to remove is the head
         if(this.head.data == data){
+            CllNode temp = this.head;
+            do {
+                temp = temp.next;
+            }while(temp.next != this.head);
             this.head = this.head.next;
-            this.tail.next = this.head;
-            this.tail = this.head;
+            temp.next = this.head;
             return true;
         }
 
@@ -51,6 +86,67 @@ public class CircularLinkedList {
         }while(aux != this.head);
 
         return false;
+    }
+
+    public int size(){
+        CllNode aux = this.head;
+        if(this.head == null){
+            return 0;
+        }
+        int l = 0;
+        do {
+            l++;
+            aux = aux.next;
+        }while(aux != this.head);
+        return l;
+    }
+
+    public int getIndex(int data){
+        CllNode aux = this.head;
+        int index = 0;
+        do {
+            if(aux.data == data){
+                return index;
+            }
+            index++;
+            aux = aux.next;
+        }while(aux != this.head);
+        return -1;
+    }
+
+    public boolean removeAt(int nth){
+        CllNode aux = this.head;
+
+        if(this.head == null){
+            return false;
+        }
+
+        if((nth > this.size() - 1) || (nth < 0)){
+            System.out.println("List IndexOutOfBoundsException");
+            System.exit(-1);
+            return false;
+        }
+
+        // this is case when the data we want to remove is the head
+        if(nth == 0){
+            CllNode temp = this.head;
+            do {
+                temp = temp.next;
+            }while(temp.next != this.head);
+            this.head = this.head.next;
+            temp.next = this.head;
+            return true;
+        }
+
+        for (int i = 0; i < nth -1; i++) {
+            aux = aux.next;
+        }
+        aux.next = aux.next.next;
+        return false;
+    }
+
+    public boolean isEmpty(){
+        return this.size() <= 0 || this.head == null;
     }
 
     @Override
