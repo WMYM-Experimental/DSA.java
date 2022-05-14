@@ -35,6 +35,30 @@ public class BinarySearchTree {
         }
     }
 
+    public void traversePreOrder(BstNode node){
+        if(node != null){
+            System.out.println(node.data);
+            traversePreOrder(node.left);
+            traversePreOrder(node.right);
+        }
+    }
+
+    public void traverseInOrder(BstNode node){
+        if(node != null) {
+            traverseInOrder(node.left);
+            System.out.println(node.data);
+            traverseInOrder(node.right);
+        }
+    }
+
+    public void traversePostOrder(BstNode node){
+        if(node != null) {
+            traversePostOrder(node.left);
+            traversePostOrder(node.right);
+            System.out.println(node.data);
+        }
+    }
+
     public boolean contains(BstNode node, int value){
         if (node == null) {
             return false;
