@@ -11,26 +11,27 @@ public class BinarySearchTree {
         this.root = null;
     }
 
-    public BstNode insert(BstNode current, int data){
+    public BstNode getRoot() {
+        return root;
+    }
+
+    public void insert(BstNode current, int data){
         if (this.root == null) {
             this.root = new BstNode(data);
-            return this.root;
+            return;
         }
-
         if (data < current.data) {
             if(current.left != null){
-                current.left = insert(current.left, data);
+                insert(current.left, data);
+            }else{
+                current.left = new BstNode(data);
             }
-            current.right = new BstNode(data);
-            return current.right;
-        } else if (data > current.data) {
+        } else {
             if(current.right != null){
                 insert(current.right, data);
+            }else{
+                current.right = new BstNode(data);
             }
-            current.right = new BstNode(data);
-            return current.right;
-        } else {
-            return current;
         }
     }
 
