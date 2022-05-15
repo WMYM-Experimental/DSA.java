@@ -1,16 +1,17 @@
 package com.dsa;
 
-import com.dsa.data_structs.cll.CircularLinkedList;
+import com.dsa.data_structs.binary_search_tree.BinarySearchTree;
 
 public class Main {
     public static void main(String[] args) {
-        CircularLinkedList cll = new CircularLinkedList();
+        BinarySearchTree btree = new BinarySearchTree();
         for (int i = 0; i < 10; i++) {
-            cll.addEnd(i);
+            btree.insert(btree.getRoot(), i);
         }
-        System.out.println(cll.toString());
-        cll.addAt(0,100);
-        cll.removeAt(1);
-        System.out.println(cll.toNodesString());
+        btree.traversePreOrder(btree.getRoot());
+        System.out.println("\n");
+        btree.traverseInOrder(btree.getRoot());
+        System.out.println("\n");
+        btree.traversePostOrder(btree.getRoot());
     }
 }

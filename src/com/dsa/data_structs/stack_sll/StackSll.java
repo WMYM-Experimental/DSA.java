@@ -1,6 +1,6 @@
 package com.dsa.data_structs.stack_sll;
 
-import com.dsa.data_structs.sll.SinglyLinkedList;
+import com.dsa.data_structs.singly_linked_list.SinglyLinkedList;
 
 public class StackSll {
     private SinglyLinkedList stk;

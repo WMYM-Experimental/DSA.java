@@ -1,6 +1,6 @@
 package com.dsa.data_structs.queue_sll;
 
-import com.dsa.data_structs.sll.SinglyLinkedList;
+import com.dsa.data_structs.singly_linked_list.SinglyLinkedList;
 
 public class QueueSll {
     private SinglyLinkedList queue;

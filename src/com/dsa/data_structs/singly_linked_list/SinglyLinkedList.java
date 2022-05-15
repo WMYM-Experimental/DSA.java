@@ -1,4 +1,4 @@
-package com.dsa.data_structs.sll;
+package com.dsa.data_structs.singly_linked_list;
 
 public class SinglyLinkedList {
     // atributes

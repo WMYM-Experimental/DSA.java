@@ -1,4 +1,4 @@
-package com.dsa.data_structs.b_tree;
+package com.dsa.data_structs.binary_search_tree;
 
 public class BstNode {
     public int data;

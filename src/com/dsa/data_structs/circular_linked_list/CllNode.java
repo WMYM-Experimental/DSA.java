@@ -1,4 +1,4 @@
-package com.dsa.data_structs.cll;
+package com.dsa.data_structs.circular_linked_list;
 
 public class CllNode {
     public int data;

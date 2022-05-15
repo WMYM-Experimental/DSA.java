@@ -1,4 +1,4 @@
-package com.dsa.data_structs.dll;
+package com.dsa.data_structs.doubly_linked_list;
 
 public class DoublyLinkedList {
     public DllNode head;

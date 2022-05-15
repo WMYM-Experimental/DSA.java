@@ -1,10 +1,10 @@
-package com.dsa.data_structs.b_tree;
+package com.dsa.data_structs.binary_search_tree;
 
 public class BinarySearchTree {
     public BstNode root;
 
-    public BinarySearchTree(int rootValue){
-        this.root = new BstNode(rootValue);
+    public BinarySearchTree(int root){
+        this.root = new BstNode(root);
     }
 
     public BinarySearchTree(){
@@ -20,6 +20,7 @@ public class BinarySearchTree {
             this.root = new BstNode(data);
             return;
         }
+
         if (data < current.data) {
             if(current.left != null){
                 insert(current.left, data);
@@ -37,7 +38,7 @@ public class BinarySearchTree {
 
     public void traversePreOrder(BstNode node){
         if(node != null){
-            System.out.println(node.data);
+            System.out.print(node.data +" ");
             traversePreOrder(node.left);
             traversePreOrder(node.right);
         }
@@ -46,7 +47,7 @@ public class BinarySearchTree {
     public void traverseInOrder(BstNode node){
         if(node != null) {
             traverseInOrder(node.left);
-            System.out.println(node.data);
+            System.out.print(node.data + " ");
             traverseInOrder(node.right);
         }
     }
@@ -55,7 +56,7 @@ public class BinarySearchTree {
         if(node != null) {
             traversePostOrder(node.left);
             traversePostOrder(node.right);
-            System.out.println(node.data);
+            System.out.print(node.data + " ");
         }
     }
 
