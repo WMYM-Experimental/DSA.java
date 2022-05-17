@@ -1,17 +1,14 @@
 package com.dsa;
 
 import com.dsa.data_structs.binary_search_tree.BinarySearchTree;
+import com.dsa.data_structs.doubly_circular_linked_list.DoublyCircularLinkedList;
 
 public class Main {
     public static void main(String[] args) {
-        BinarySearchTree btree = new BinarySearchTree();
+        DoublyCircularLinkedList dcll = new DoublyCircularLinkedList(100);
         for (int i = 0; i < 10; i++) {
-            btree.insert(btree.getRoot(), i);
+            dcll.addEnd(i);
         }
-        btree.traversePreOrder(btree.getRoot());
-        System.out.println("\n");
-        btree.traverseInOrder(btree.getRoot());
-        System.out.println("\n");
-        btree.traversePostOrder(btree.getRoot());
+        System.out.println(dcll.toNodesString());
     }
 }

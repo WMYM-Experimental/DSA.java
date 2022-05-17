@@ -4,8 +4,8 @@ import com.dsa.data_structs.doubly_linked_list.DllNode;
 
 public class DcllNode {
     public int data;
-    public DllNode prev;
-    public DllNode next;
+    public DcllNode prev;
+    public DcllNode next;
 
     public DcllNode(int data){
         this.data = data;
