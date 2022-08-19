@@ -2,7 +2,7 @@
 
 ## Data Structures
 
-Are the programmetic way of storing data **in  memory space** so that data can be used efficiently.
+Are the programmatic way of storing data **in  memory space** so that data can be used efficiently.
 
 ### Characteristics of a Data Structure:
 - **Time Complexity**: Running time or execution time of operations of data structure must be as small as possible.
@@ -24,3 +24,11 @@ Are the programmetic way of storing data **in  memory space** so that data can b
 - **Binary Trees**
 - **Graphs**
 - **Matrix**
+
+## Leetcode
+
+I will solve some problems of leetcode in java.
+
+## Project Euler
+
+The same way am going to solve the leetcode problems i'll do with the project euler problems.

@@ -9,10 +9,9 @@ By considering the terms in the Fibonacci sequence whose values do not exceed fo
 
 */
 
-package com.dsa.algo.project_euler;
+package com.dsa.project_euler;
 
 import java.util.HashMap;
-import java.util.Stack;
 
 import static java.lang.Integer.parseInt;
 
@@ -33,6 +32,7 @@ public class ID_002 {
         }
     }
 
+    /*
     public static int fiboDP(int n, HashMap memory){
         // memory.put(1,1);
         if(memory.containsKey(n)){
@@ -42,5 +42,6 @@ public class ID_002 {
         int currentFibo = fiboDP(n-1, memory) + fiboDP(n-2, memory);
         return 0;
     }
+    */
 
 }

@@ -5,7 +5,7 @@ If we list all the natural numbers below 10 that are multiples of 3 or 5, we get
 
 Find the sum of all the multiples of 3 or 5 below 1000.
 */
-package com.dsa.algo.project_euler;
+package com.dsa.project_euler;
 
 public class ID_001 {
     public static void main(String[] args) {
